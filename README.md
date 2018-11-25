@@ -1,5 +1,9 @@
 # products
 
+CLICK BELOW LINK TO ACCESS THE APP. Its deployed in firebase.
+
+https://productratings-6bd97.firebaseapp.com/
+
 PROBLEM STATEMENT
 
 Pick your top 10+ fav books, movies, video games, food, or whatever you
