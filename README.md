@@ -21,7 +21,9 @@ press again it will stop random rating.
 RESOLUTION
 
 Step 1 –  Create Angular project using angular CLI (Product-ratings)
+
 Step 2 – Create a model that defines the product. (/models/product.model.ts)
+
 Step 3 – Define actions. /actions/Product.action.ts
        -	There are 2 major actions
           i.	RANK_PRODUCT 
@@ -43,6 +45,9 @@ Step 6. Generate component rating.component.ts
       i.	This is triggered for every product from read.product.component.ts with product, then based on rating value it sets the Star Mark. This also allows user to rank product at each product level.
       ii.	 onClick method in rating.component.ts, changes the selected product ratings and then dispatch to store to update the productlist. 
       iii.	This invokes RANK_PRODUCT which finds the product in store by Id and change ratings, then returns the new state.
+
 Step 7. App.component.ts – This initializes default product list.
+
 Step 8. Configure all components in app.module.ts
-Step : app.state.ts interface defines the reducer action.
+
+Step 9: app.state.ts interface defines the reducer action.
