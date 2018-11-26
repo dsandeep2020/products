@@ -4,7 +4,7 @@ CLICK BELOW LINK TO ACCESS THE APP. Its deployed in firebase.
 
 https://productratings-6bd97.firebaseapp.com/
 
-PROBLEM STATEMENT
+# PROBLEM STATEMENT
 
 Pick your top 10+ fav books, movies, video games, food, or whatever you
 wish. Build an Angular + ngrx/store or react-redux app that lists these
@@ -22,7 +22,19 @@ press again it will stop random rating.
 5. Focus on test driven approach while coding this assignment.
 6. Git repo with commit messages will be a plus.
 
-RESOLUTION
+# TECHNOLOGIES
+   1. Angular 7
+   2. Nodejs
+   3. ngrx store
+   4. Firebase hosting
+
+# INSTALATION
+   1. Download node from (https://nodejs.org/en/download/) Install Node 
+   2. Install angular CLI latest (https://github.com/angular/angular-cli/wiki)
+   3. Get inside product-ratings folder.
+   4. Type ng serve -o
+   
+# RESOLUTION
 
 Step 1 –  Create Angular project using angular CLI (Product-ratings)
 
@@ -34,7 +46,7 @@ Step 3 – Define actions. /actions/Product.action.ts
           ii.	RANDOM_RANK_PRODUCT
 
 Step 4 – Create Reducers. /reducers/product.reducer.ts
-    i.	For action RANK_PRODUCT : It finds the product based on product Id and updates the rating and returns all products.
+    i.	For action RANK_PRODUCT : It finds the product based on product Id from store, then it updates the rating and returns all products from store.
     ii.	For action RANDOM_RANK_PRODUCT : It returns all products. 
         Rating/Ranks are modified in (read-product-component.ts) and then dispatch to store that returns all products.
         
