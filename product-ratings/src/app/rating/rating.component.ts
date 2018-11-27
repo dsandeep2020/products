@@ -12,18 +12,18 @@ import * as ProductActions from './../actions/product.actions';
 })
 
 export class RatingComponent implements OnInit {
-  @Input() product: Product;
-  
+  @Input() product: Partial<Product> = {id: 1, rating: 3};
+
   inputName: string;
   constructor (public store: Store<appState>) {
   }
 
   ngOnInit() {
-   this.inputName = this.product.id + '_rating';
+   this.inputName = this.product ? this.product.id + '_rating' : null;
   }
 
   onClick(rating: number): void {
     this.product.rating = rating;
-    this.store.dispatch(new ProductActions.RankProduct(this.product));
+    this.store.dispatch(new ProductActions.RankProduct(this.product as any));
   }
 }

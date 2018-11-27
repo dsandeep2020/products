@@ -14,7 +14,7 @@ import { HttpClient } from '@angular/common/http';
 export class ReadProductsComponent implements OnInit {
   products: Observable<Product[]>;
   productsArray: Product[];
-  status: boolean = false;
+  status = false;
 
   constructor(private store: Store<appState>, public httpClient: HttpClient) {
     this.products = store.select('product');
@@ -23,27 +23,34 @@ export class ReadProductsComponent implements OnInit {
   ngOnInit() {
        this.products.subscribe((allProducts: any) => {
        this.productsArray = this.sortCollection(allProducts);
-    }); 
+    });
   }
-  
   public sortCollection(arrayObj: any): Product[] {
-    arrayObj = arrayObj.sort((a, b) => a.rating > b.rating ? -1 : a.rating < b.rating ? 1 : 0);  
+    arrayObj = arrayObj.sort((a, b) => a.rating > b.rating ? -1 : a.rating < b.rating ? 1 : 0);
     return arrayObj;
   }
-  
+
   onClickToggle(): void {
     this.status = !this.status;
-    if(this.status) {
-      this.productsArray.forEach(function(p) {
-          p.rating = +(Math.random() * 10).toFixed();
-        });
-      this.productsArray = this.sortCollection(this.productsArray);
+    if (this.status) {
+      this.sortProductsRandomly();
       this.store.dispatch(new ProductActions.RandomRankProduct(this.productsArray));
     } else {
-       this.httpClient.get('./assets/products.json').subscribe((p: any) => {
-       this.store.dispatch(new ProductActions.RandomRankProduct(p));
-    });
+       this.resetRandomSorting();
     }
+  }
+
+  sortProductsRandomly(): void {
+    this.productsArray.forEach(function(p) {
+          p.rating = +(Math.random() * 10).toFixed();
+    });
+    this.productsArray = this.sortCollection(this.productsArray);
+  }
+
+  resetRandomSorting(): void {
+     this.httpClient.get('./assets/products.json').subscribe((p: any) => {
+       this.store.dispatch(new ProductActions.RandomRankProduct(p));
+   });
   }
 }
 

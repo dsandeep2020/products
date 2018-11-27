@@ -1,6 +1,6 @@
 <fieldset class="rating">
   
-  <input type="radio" [name]="inputName" *ngFor="let c of counts" value="c" [checked]="product.rating===c" />
+  <input type="radio" [name]="inputName" value="10" [checked]="product.rating===10" />
   <label title="Sucks big time" (click)='onClick(10)'>10 star</label>
   
   <input type="radio" [name]="inputName" value="9" [checked]="product.rating===9" />

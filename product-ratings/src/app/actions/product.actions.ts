@@ -15,6 +15,4 @@ export class RandomRankProduct implements Action {
     constructor(public payload: Product[]) {}
 }
 
-
-
 export type Actions = RankProduct | RandomRankProduct ;
