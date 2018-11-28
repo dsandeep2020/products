@@ -115,7 +115,7 @@ Step 9: app.state.ts interface defines the reducer action.
        - empty state products
            : reducer constructor returns the default state of the Store.
        - Rank products
-           : reducer constructor takes one product as input. It verifies the returnd product list has input product or not. IT chakes               via rating attribute value.
+           : reducer constructor takes one product as input. It verifies the returnd product list has input product or not. IT chakes  via rating attribute value.
        - Random Rank products
             : reducer constructor takes one product collection as input. It verifies the returnd product collection is same or not.
            
